@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@400;700&display=swap');
+
+:root{
+    --container-width: 500px;
+    --font: 'Outfit', sans-serif;
+    --border-curve: 20px;
+
+    --light-gray: hsl(212, 45%, 89%);
+    --grayish-blue: hsl(220, 15%, 55%);
+    --dark-blue: hsl(218, 44%, 22%); 
+}
+
+body{
+    background: var(--light-gray);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.container{
+    width: var(--container-width);
+    padding: 10px;
+    border-radius: var(--border-curve);
+    background-color: white;
+    position:absolute;
+    box-shadow: 10px 10px 15px rgb(184, 205, 227);
+}
+
+.qr-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{
+    position: relative;
+    width: 95%;
+    border-radius: calc(var(--border-curve)/2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gets the correct padding space above QR code image based on the width of the container */
+    margin-top: calc((var(--container-width) * .05)/2);
+    margin-bottom: 10px;   
+}
+
+.text-content{
+    width: 95%;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font);
+}
+.text-content>h1{
+    /* systematically gets adequate font sizing according to the width of the container.
+     making sure that the text will look like the sample image no matter how the container width is resized */
+    font-size: calc(var(--container-width)*.072);
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+.text-content>p{
+    font-size: calc(var(--container-width)*.05);
+    font-weight: 400;
+    color:var(--grayish-blue);
+    width: 90%;
+    margin-top: 0;
+}
+
+.attribution>p{
+    font-size: calc(var(--container-width)*.035);
+    font-family: var(--font);
+    text-align: center;
+    margin-top: 0;
+    color: var(--light-gray);
+}
+.attribution>p>a{
+    text-decoration: none;
+    color: var(--light-gray);
+    cursor: pointer;
+    transition: all 250ms;
+}
+.attribution>p>a:hover{
+    color: var(--dark-blue);
+    
+}
